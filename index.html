@@ -658,6 +658,13 @@ body.start-animation .ketik3{
 
 <body>
 
+    <div id="bannerChrome" style="display:none; background:#1e293b; color:white; padding:12px; text-align:center; position:fixed; top:0; left:0; width:100%; z-index:99999; font-size:14px;">
+  <span>Untuk pengalaman terbaik, buka di Chrome</span>
+  <button onclick="bukaDiChrome()" style="margin-left:10px; padding:6px 12px; background:#334155; border:none; border-radius:8px; color:white; font-weight:600;">
+    Buka Chrome
+  </button>
+    </div>
+
     <!-- ================= POPUP MUSIK ================= -->
 
     <div class="popupMusik" id="popupMusik">
@@ -1736,7 +1743,22 @@ body.start-animation .ketik3{
     <!-- ================= JAVASCRIPT ================= -->
 
     <script>
-      
+// Deteksi kalau buka dari WhatsApp
+window.addEventListener('DOMContentLoaded', () => {
+    let ua = navigator.userAgent.toLowerCase();
+    if(ua.includes('whatsapp')){
+        document.getElementById('bannerChrome').style.display = 'block';
+        // Geser konten biar nggak ketutup banner
+        document.body.style.paddingTop = '50px';
+    }
+});
+
+function bukaDiChrome(){
+    let url = window.location.href.replace('https://','').replace('http://','');
+    let intentUrl = `intent://${url}#Intent;scheme=https;package=com.android.chrome;end`;
+    window.location.href = intentUrl;
+}
+        
       function scrollBawah(){
     document.getElementById("bawahPage4").scrollIntoView({ 
         behavior: "smooth" 
