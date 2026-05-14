@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pengumuman Kenaikan Kelas</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+
+    <style>
+  
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    -webkit-tap-highlight-color:transparent;
+}
+
+body{
+    overflow:hidden;
+    background:#020617;
+    color:#e5e7eb;
+}
+
+/* ================= BACKGROUND ================= */
+
+.bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.78)),
+    url('screenshot_2026_0511_180631.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    z-index:-1;
+
+    animation:bgZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgZoom{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+
+}
+
+/* ================= PAGE ================= */
+
+.page{
+    width:100%;
+    height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+    position:absolute;
+    overflow:hidden;
+    animation:fadePage .5s ease;
+}
+
+.active{
+    display:flex;
+}
+
+@keyframes fadePage{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+/* ================= CARD ================= */
+
+.card{
+    width:100%;
+    max-width:480px;
+    padding:28px;
+    border-radius:30px;
+
+    background:rgba(15,23,42,0.75);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+
+    text-align:center;
+
+    color:#fff;
+
+    animation:muncul 0.7s ease;
+}
+
+@keyframes muncul{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ================= TEXT ================= */
+
+h1{
+    font-size:30px;
+    margin-bottom:10px;
+    font-weight:600;
+    color:#f8fafc;
+}
+
+h2{
+    font-weight:600;
+    color:#f8fafc;
+}
+
+h3{
+    color:#e2e8f0;
+}
+
+.desc{
+    line-height:1.9;
+    margin-bottom:20px;
+    color:#cbd5e1;
+}
+
+.icon{
+    font-size:65px;
+    margin-bottom:15px;
+}
+
+/* ================= FOTO ================= */
+
+.foto{
+    width:120px;
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    display:block;
+
+    margin:auto;
+
+    border:4px solid rgba(255,255,255,0.08);
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* ================= BIODATA ================= */
+
+.biodata{
+    text-align:left;
+    margin-top:20px;
+    margin-bottom:20px;
+    line-height:2;
+    font-size:15px;
+
+    background:rgba(255,255,255,0.05);
+
+    padding:18px;
+
+    border-radius:18px;
+
+    color:#e2e8f0;
+
+    border:1px solid rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(10px);
+}
+
+/* ================= BUTTON ================= */
+
+button{
+    width:100%;
+    padding:14px;
+
+    border:none;
+
+    border-radius:18px;
+
+    margin-top:15px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    background:linear-gradient(135deg,#334155,#0f172a);
+
+    color:white;
+
+    transition:0.3s;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.25);
+}
+
+button:hover{
+
+    transform:translateY(-3px) scale(1.02);
+
+    background:linear-gradient(135deg,#475569,#1e293b);
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.35);
+
+}
+
+/* ================= INPUT ================= */
+
+select,input{
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    margin-top:15px;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    font-size:15px;
+
+    color:white;
+
+    backdrop-filter:blur(10px);
+
+    transition:0.3s;
+}
+
+select:focus,
+input:focus{
+
+    border:1px solid #60a5fa;
+
+    box-shadow:0 0 15px rgba(96,165,250,0.3);
+
+}
+
+/* ================= RESULT ================= */
+
+.result{
+    margin-top:20px;
+    padding:18px;
+    border-radius:18px;
+    font-size:20px;
+    font-weight:600;
+    min-height:80px;
+
+    color:#f8fafc;
+}
+
+.success{
+    background:rgba(255,255,255,0.05);
+}
+
+/* ================= POPUP ================= */
+
+.popupMusik{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.7);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    backdrop-filter:blur(8px);
+}
+
+.popupBox{
+    width:90%;
+    max-width:340px;
+    padding:28px;
+    border-radius:25px;
+
+    background:#0f172a;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:white;
+}
+
+/* ================= CREDIT ================= */
+
+.credit-container{
+    width:100%;
+    height:100vh;
+    overflow-y:auto;
+    padding:30px 15px 150px;
+}
+
+.credit-text{
+    text-align:center;
+}
+
+.credit-text h1{
+    color:white;
+}
+
+/* ================= BOX DATA SISWA ================= */
+
+.boxCredit{
+    width:100%;
+    max-width:500px;
+
+    margin:auto auto 30px;
+
+    padding:25px;
+
+    border-radius:28px;
+
+    background:rgba(15,23,42,0.82);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+
+    transition:0.3s;
+}
+
+.boxCredit:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.45);
+
+}
+
+/* ================= PROFILE ================= */
+
+.headerProfile{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.headerProfile h2{
+    margin:0;
+    font-size:38px;
+}
+
+.fotoCredit img{
+    width:120px;
+    height:120px;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:20px;
+
+    border:2px solid rgba(255,255,255,0.08);
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ================= ALBUM ================= */
+
+.albumCard{
+    max-width:1100px;
+    height:90vh;
+    overflow-y:auto;
+    padding:25px;
+
+    background:rgba(15,23,42,0.94) !important;
+
+    border-radius:30px;
+
+    backdrop-filter:blur(10px);
+}
+
+/* ================= VIDEO ================= */
+
+.videoBox{
+    width:100%;
+    margin-bottom:25px;
+}
+
+.videoBox video{
+    width:100%;
+    border-radius:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* ================= GRID FOTO ================= */
+
+.albumGrid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+    margin-top:25px;
+}
+
+/* ================= FRAME FOTO ================= */
+
+.albumItem{
+
+    position:relative;
+
+    background:rgba(30,41,59,0.8);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    padding:14px 14px 22px;
+
+    border-radius:18px;
+
+    transition:.3s;
+
+    box-shadow:0 8px 18px rgba(0,0,0,0.25);
+}
+
+.albumItem:nth-child(even){
+    transform:rotate(2deg);
+}
+
+.albumItem:hover{
+    transform:scale(1.03);
+}
+
+.albumItem::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:8px;
+    left:8px;
+    right:8px;
+    bottom:8px;
+
+    border:
+    1px dashed rgba(255,255,255,0.12);
+
+    border-radius:4px;
+
+    pointer-events:none;
+}
+
+/* ================= FOTO ALBUM ================= */
+
+.albumItem img{
+
+    width:100%;
+    height:240px;
+
+    object-fit:cover;
+
+    border-radius:5px;
+
+    margin-bottom:15px;
+
+    background:#111;
+
+    transition:0.4s;
+
+    filter:brightness(0.82) grayscale(10%);
+}
+
+.albumItem img:hover{
+
+    transform:scale(1.04);
+
+    filter:brightness(1);
+
+}
+
+.albumItem p{
+
+    text-align:center;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#e2e8f0;
+}
+
+/* ================= POPUP FOTO ================= */
+
+.popupFoto{
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.92);
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+    padding:20px;
+}
+
+.popupFoto img{
+    max-width:95%;
+    max-height:90%;
+
+    border-radius:20px;
+}
+
+/* ================= ANIMASI TEXT ================= */
+
+.ketik1,.ketik2,.ketik3{
+    opacity:0;
+    transform: translateY(10px);
+}
+
+/* Animasi cuma jalan kalau body punya class start-animation */
+body.start-animation .ketik1,
+body.start-animation .ketik2,
+body.start-animation .ketik3{
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.ketik2{
+    animation-delay:0.4s;
+}
+
+.ketik3{
+    animation-delay:0.8s;
+}
+
+@keyframes fadeInUp{
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:700px){
+
+    .albumGrid{
+        grid-template-columns:repeat(2,1fr);
+        gap:18px;
+    }
+
+    .albumItem img{
+        height:150px;
+    }
+
+    .headerProfile{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+/* Bikin page 3 aja yang bisa di-scroll */
+#p3{
+    overflow-y:auto;
+    align-items:flex-start; /* biar mulai dari atas */
+    padding-top:30px;
+    padding-bottom:30px;
+}
+
+/* Biar card di page 3 nggak ketutup pas di-scroll */
+#p3 .card{
+    margin-bottom:30px;
+}
+
+.btnScrollBawah{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+    background: linear-gradient(135deg, #334155, #0f172a);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnScrollBawah:hover{
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #475569, #1e293b);
+}
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ================= POPUP MUSIK ================= -->
+
+    <div class="popupMusik" id="popupMusik">
+
+        <div class="popupBox">
+
+            <h2>🎵 Izinkan Musik?</h2>
+
+            <p class="desc">
+                Website menggunakan backsound
+            </p>
+
+            <button onclick="izinkanMusik()">
+                Putar Musik
+            </button>
+
+            <button onclick="tutupPopup()">
+                Tanpa Musik
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= POPUP FOTO ================= -->
+
+    <div class="popupFoto" id="popupFoto" onclick="tutupFoto()">
+
+        <img id="fotoBesar">
+
+    </div>
+
+    <!-- ================= BACKGROUND ================= -->
+
+    <div class="bg"></div>
+
+    <!-- ================= AUDIO ================= -->
+
+    <audio id="backsound" loop>
+        <source src="sampai jadi debu.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- ================= PAGE 1 ================= -->
+
+    <div class="page active" id="p1">
+
+        <div class="card">
+
+            <div class="icon">🎓</div>
+
+            <h1>Welcome to web XA</h1>
+
+            <p class="desc ketik1">
+                Selamat datang di website album XA
+            </p>
+            
+            <p class="desc ketik2">
+              semoga apa yang kita usahakan hari ini akan menjadi hal yang paling kita impikan di hari kemudian
+            </p>
+            
+            <p class="desc ketik3">
+              semangat tarussss pian-piann🔥
+            </p>
+
+            <button onclick="page(2)">
+                Masuk Website
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= PAGE 2 ================= -->
+
+    <div class="page" id="p2">
+
+        <div class="card">
+
+            <div class="icon">📚</div>
+
+            <h1>Motivasi</h1>
+
+            <p class="desc">
+                Jangan takut gagal dan teruslah berkembang
+            </p>
+            
+            <p class="desc">
+              ⚡Kesuksesan tidak diukur dari seberapa cepat kau sampai, tetapi dari seberapa teguh kau melangkahp⚡
+            </p>
+
+            <button onclick="page(3)">
+                Lanjut
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= PAGE 3 ================= -->
+
+    <div class="page" id="p3">
+
+        <div class="card">
+
+            <img src="default.jpg" id="foto" class="foto">
+
+            <h1 id="namaTampil">
+                Data Siswa
+            </h1>
+
+            <div class="biodata">
+
+                <p>
+                    🎂 <b>Tempat/Tanggal Lahir:</b><br>
+                    <span id="ttl">-</span>
+                </p>
+
+                <p>
+                    🏫 <b>Asal Sekolah:</b><br>
+                    <span id="asal">-</span>
+                </p>
+
+                <p>
+                    📚 <b>Jurusan Pilihan:</b><br>
+                    <span id="jurusan">-</span>
+                </p>
+
+                <p>
+                    💬 <b>Kata-Kata:</b><br>
+                    <i id="kata">-</i>
+                </p>
+
+            </div>
+
+           <select id="nama">
+
+    <option value="">-- Pilih Nama --</option>
+
+    <option value="Abrar">Abrar</option>
+    <option value="Ahmad kamaru'din saputra">Ahmad kamaru'din saputra</option>
+    <option value="Ahmad zairullah">Ahmad zairullah</option>
+    <option value="Airah andriani">Airah andriani</option>
+    <option value="Anisa nia ramadhani">Anisa nia ramadhani</option>
+    <option value="Aulia nur ramadhan">Aulia nur ramadhan</option>
+    <option value="Bariq afondssji">Bariq afondssji</option>
+    <option value="Dina kamila">Dina kamila</option>
+    <option value="Disti sahrah">Disti sahrah</option>
+    <option value="Erika nur jannah">Erika nur jannah</option>
+    <option value="Fahri">Fahri</option>
+    <option value="Lina">Lina</option>
+    <option value="Maya">Maya</option>
+    <option value="Nanda">Nanda</option>
+    <option value="Maulana">Maulana</option>
+    <option value="Putri">Putri</option>
+    <option value="Qori">Qori</option>
+    <option value="Rizky">Rizky</option>
+    <option value="Salsa">Salsa</option>
+    <option value="Teguh">Teguh</option>
+    <option value="Udin">Udin</option>
+    <option value="Vina">Vina</option>
+    <option value="Wahyu">Wahyu</option>
+    <option value="Xavier">Xavier</option>
+    <option value="Yuni">Yuni</option>
+    <option value="Zidan">Zidan</option>
+    <option value="Aisyah">Aisyah</option>
+    <option value="Bagas">Bagas</option>
+    <option value="Cahyo">Cahyo</option>
+    <option value="Dina">Dina</option>
+    <option value="Erwin">Erwin</option>
+    <option value="Fitri">Fitri</option>
+    <option value="Galih">Galih</option>
+    <option value="Hasna">Hasna</option>
+    <option value="Ilham">Ilham</option>
+    <option value="Jihan">Jihan</option>
+
+</select>
+
+            <button onclick="cek()">
+                Lihat Hasil
+            </button>
+
+            <div id="hasil" class="result"></div>
+
+            <button onclick="page(2)">
+                Kembali
+            </button>
+
+            <button id="btnLanjut" onclick="page(4)" style="display:none;">
+                Lanjut
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= PAGE 4 ================= -->
+
+    <div class="page" id="p4">
+
+        <div class="credit-container">
+
+            <div class="credit-text">
+
+                <h1>DATA SISWA</h1>
+
+                <br><br>
+                
+                <!-- PROFIL WALI KELAS -->
+<div class="boxCredit" style="border:2px solid #22c55e;">
+    <div class="headerProfile">
+       <h2>WALI KELAS</h2>
+        <div class="fotoCredit">
+            <img src="wali_kelas.jpg" onclick="lihatFoto(this.src)">
+        </div>
+        <h2>Bu Nida masrurah</h2>
+    </div>
+    
+    <h3>MATA PELAJARAN</h3>
+    <p>BK</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>"[Tulis pesan/motivasi dari wali kelas di sini]"</p>
+</div>
+
+                    <!-- ================= 34 BOX CREDIT ================= -->
+
+<!-- 1 -->
+   <div class="boxCredit">
+     <div class="headerProfile">
+    <div class="fotoCredit">
+        <img src="Abayy.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Abrar</h2>
+    
+    </div>
+    
+    <br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>TANAH BUMBU,10 maret 2010</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>MTsN 1 TAMAH BUMBU</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>-</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>-</p>
+</div>
+
+<!-- 2 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="budi.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Ahmad kamaru'din saputra</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>-</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>-</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>-</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>-</p>
+</div>
+
+<!-- 3 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="citra.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Ahmad zairullah</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Sang-Sang, 8 Agustus 2009</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>MTsN 1 TANAH BUMBU</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPS</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>"Mungkin nanti jalannya akan beda tapi percayalah sekelas dengan kalian adalah part terseru, always be healthy guys"</p>
+</div>
+
+<!-- 4 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="dewi.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Airah andriani</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>TANAH BUMBU, </p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMPN 1 KUSAN HILUR</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPA</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>"Breakbeat lebih asik dari pada breakheart"</p>
+</div>
+
+<!-- 5 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Anisa nia ramadhani</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>-</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>-</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p></p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>-</p>
+</div>
+
+<!-- 6 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Aulia nur ramadhan</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>TANAH BUMBU, 29 Agustus 2009</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>MTSs NU AL-FALAH</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPA</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>"Terima kasih sudah jadi bagian dari cerita di kelas ini. Dari tugas yang bikin pusing, candaan receh, sampai momen diam-diam saling bantu, semuanya bakal jadi kenangan yang susah dilupain. Maaf kalau selama bersama aku pernah salah kata atau sikap. Semoga setelah ini jalan kita sama-sama dipenuhi hal baik, dan walau nanti sibuk dengan kehidupan masing-masing, semoga kita tetap saling ingat sebagai teman yang pernah tumbuh bersama"</p>
+</div>
+
+<!-- 7 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Bariq afondssji</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>TANAH BUMBU, </p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP MUHAMMDIYAH</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPS</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>jangn kasih kendor masa depan ngga butuh alasan butuh nya pembuktian</p>
+</div>
+
+<!-- 8 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Dina kamila</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>TANAH BUMBU, 5 juli 2010</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMPN 6 KUSAN HILUR</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPS</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>"Setahun bareng kalian ternyata ninggalin banyak cerita dan kenangan yang nggak sedikit. Makasih udah bikin hari-hari di kelas terasa lebih hidup, lebih rame, dan lebih berarti. Nanti yang paling ngangenin bukan cuma suasananya, tapi orang-orang di dalamnya. Kalian bakal selalu jadi bagian indah dari cerita ini.Dan sorry kalo banyak hal yang ngga kalian suka dari cara ku ngomong ke kalian,intinya makasih buat satu tahun nya"</p>
+</div>
+
+<!-- 9 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Disti sahrah</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>TANAH BUMBU, 7 desember 2009</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>MTsN 1 TANAH BUMBU</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>AGAMA</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>"Banggalah pada dirimu sendiri karena tidak ada seorang pun yang tahu bagaimana rasanya menjadi dirimu setiap hari"</p>
+</div>
+
+<!-- 10 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Erika nur jannah</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>TANAH BUMBU, 15 desember 2009</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMPN 2 KUSAN HILUR</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPS</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>"Kita dipertemukan di kelas yang sama, mungkin biar saling nguatin.  Sekarang dipisah, mungkin biar kita belajar jalan sendiri.  Makasih udah jadi bagian dari cerita SMA ku yang paling ga mau aku skip.  Beda kelas bukan berarti selesai.  Kita lanjut di bab selanjutnya, oke?"</p>
+</div>
+
+<!-- 11 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>fahri</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Mudalang, 20 januari 2010</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>MTsN 1 TANAH BUMBU</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPS</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>"DUNIA AJA INI"</p>
+</div>
+
+<!-- 12 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Lina</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 9 September 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 10</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPS</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Terus berkembang.</p>
+</div>
+
+<!-- 13 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Maya</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 10 Oktober 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 11</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>RPL</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Nikmati prosesnya.</p>
+</div>
+
+<!-- 14 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Nanda</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 11 November 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 12</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>TKJ</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Berani mencoba hal baru.</p>
+</div>
+
+<!-- 15 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Maulana</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>TANAH BUMBU, 11 april 2010</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>MTsN 1 TANAH BUMBU</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPS</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>prestasi tidak menentukanmu sukses, tetapi sukses di tentukan oleh caramu berprosess.</p>
+</div>
+
+<!-- 16 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Putri</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 13 Januari 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 14</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPS</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Mimpi besar dimulai sekarang.</p>
+</div>
+
+<!-- 17 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Qori</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 14 Februari 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 15</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>RPL</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Terus berusaha.</p>
+</div>
+
+<!-- 18 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Rizky</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 15 Maret 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 16</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>TKJ</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Sukses butuh perjuangan.</p>
+</div>
+
+<!-- 19 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Salsa</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 16 April 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 17</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPA</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Jangan takut gagal.</p>
+</div>
+
+<!-- 20 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Teguh</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 17 Mei 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 18</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPS</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Belajar sungguh-sungguh.</p>
+</div>
+
+<!-- 21 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Udin</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 18 Juni 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 19</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>RPL</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Semangat meraih cita-cita.</p>
+</div>
+
+<!-- 22 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Vina</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 19 Juli 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 20</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>TKJ</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Percaya diri adalah kunci.</p>
+</div>
+
+<!-- 23 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Wahyu</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 20 Agustus 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 21</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPA</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Tetap fokus tujuan.</p>
+</div>
+
+<!-- 24 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Xavier</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 21 September 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 22</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPS</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Kerja keras membawa hasil.</p>
+</div>
+
+<!-- 25 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Yuni</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 22 Oktober 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 23</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>RPL</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Tetap rendah hati.</p>
+</div>
+
+<!-- 26 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Zidan</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 23 November 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 24</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>TKJ</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Jangan berhenti belajar.</p>
+</div>
+
+<!-- 27 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Aisyah</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 24 Desember 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 25</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPA</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Jadilah versi terbaik.</p>
+</div>
+
+<!-- 28 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Bagas</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 25 Januari 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 26</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPS</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Masa depan dimulai hari ini.</p>
+</div>
+
+<!-- 29 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Cahyo</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 26 Februari 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 27</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>RPL</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Tetap konsisten.</p>
+</div>
+
+<!-- 30 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Dina</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 27 Maret 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 28</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>TKJ</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Selalu bersyukur.</p>
+</div>
+
+<!-- 31 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Erwin</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 28 April 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 29</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPA</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Berani melangkah maju.</p>
+</div>
+
+<!-- 32 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Fitri</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 29 Mei 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 30</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPS</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Percaya proses kehidupan.</p>
+</div>
+
+<!-- 33 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="default.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Galih</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 30 Juni 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 31</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>RPL</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Jangan cepat puas.</p>
+</div>
+
+<!-- 34 -->
+<div class="boxCredit">
+    <div class="fotoCredit">
+        <img src="IMG_20260421_120646.jpg" onclick="lihatFoto(this.src)">
+    </div>
+
+    <h2>Jihan</h2><br>
+
+    <h3>TEMPAT TANGGAL LAHIR</h3>
+    <p>Kapuas, 3 September 2008</p><br>
+
+    <h3>ASAL SEKOLAH</h3>
+    <p>SMP Negeri 34</p><br>
+
+    <h3>JURUSAN PILIHAN</h3>
+    <p>IPS</p><br>
+
+    <h3>KATA-KATA</h3>
+    <p>Terus maju.</p>
+</div>
+
+<button onclick="page(3)">
+    Kembali
+</button>
+
+<button onclick="page(5)">
+    Lanjut
+</button>
+
+<button onclick="scrollBawah()" class="btnScrollBawah">
+    ↓
+</button>
+
+<div id="bawahPage4"></div>
+
+<!-- LANJUTKAN POLA YANG SAMA HINGGA JIHAN (34) -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= PAGE 5 ================= -->
+
+    <!-- ================= PAGE 5 ALBUM ================= -->
+
+<div class="page" id="p5">
+
+    <div class="card albumCard">
+
+        <h1>Album Kenangan</h1>
+
+        <p class="desc">
+            Momen terbaik bersama teman-teman kelas
+        </p>
+
+        <!-- ===== VIDEO ===== -->
+
+        <div class="videoBox">
+            <video id="videoKenangan1"controls>
+                <source src="VID-20260510-WA0015.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="videoBox">
+            <video id="videoKenangan2"controls>
+                <source src="VID-20260511-WA0022.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- ===== FOTO ===== -->
+
+        <div class="albumGrid">
+
+            <div class="albumItem">
+                <img src="IMG-20260228-WA0013.jpg" onclick="lihatFoto(this.src)">
+                <p>Foto Bersama</p>
+            </div>
+
+            <div class="albumItem">
+                <img src="IMG-20250904-WA0276.jpg" onclick="lihatFoto(this.src)">
+                <p>Perpisahan Sekolah</p>
+            </div>
+
+            <div class="albumItem">
+                <img src="IMG-20250904-WA0270.jpg" onclick="lihatFoto(this.src)">
+                <p>Momen Belajar</p>
+            </div>
+
+            <div class="albumItem">
+                <img src="IMG-20250904-WA0296.jpg" onclick="lihatFoto(this.src)">
+                <p>Kegiatan Kelas</p>
+            </div>
+
+            <div class="albumItem">
+                <img src="kelas5.jpg" onclick="lihatFoto(this.src)">
+                <p>Kenangan Bersama</p>
+            </div>
+
+            <div class="albumItem">
+                <img src="kelas6.jpg" onclick="lihatFoto(this.src)">
+                <p>Momen Bahagia</p>
+            </div>
+
+        </div>
+
+        <button onclick="page(4)">
+            Kembali
+        </button>
+
+        <button onclick="page(6)">
+            Lanjut
+        </button>
+
+    </div>
+
+</div>
+
+    <!-- ================= PAGE 6 ================= -->
+
+
+
+    <div class="page" id="p6">
+
+        <div class="card">
+
+            <div class="icon">🎮</div>
+
+            <h1>Mini Games</h1>
+
+            <p class="desc">
+                Tebak angka 1 - 10
+            </p>
+
+            <input type="number" id="tebak" placeholder="Masukkan angka">
+
+            <button onclick="game()">
+                Tebak
+            </button>
+
+            <div id="gamehasil" class="result"></div>
+
+            <button onclick="page(1)">
+                Kembali
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+      
+      function scrollBawah(){
+    document.getElementById("bawahPage4").scrollIntoView({ 
+        behavior: "smooth" 
+    });
+}
+
+        const siswaData = {
+
+    "Abrar":{
+        foto:"Abayy.jpg",
+        ttl:"Tanah Bumbu, 10 Maret 2010",
+        asal:"MTsN 1 TANAH BUMBU",
+        jurusan:"-",
+        kata:"-.",
+        status:"naik"
+    },
+
+    "Ahmad kamaru'din saputra":{
+        foto:"budi.jpg",
+        ttl:"-",
+        asal :"-",
+        jurusan:"-",
+        kata:"-",
+        status:"-",
+    },
+
+    "Ahmad zairullah":{
+        foto:"citra.jpg",
+        ttl:"Sang-Sang, 8 Agustus 2009",
+        asal:"MTsN 1 TANAH BUMBU",
+        jurusan:"IPS",
+        kata:"Mungkin nanti jalannya akan beda tapi percayalah sekelas dengan kalian adalah part terseru, always be healthy guys",
+        status:"naik"
+    },
+
+    "Airah andriani":{
+        foto:"dewi.jpg",
+        ttl:"TANAH BUMBU, ",
+        asal:"SMPN 1 KUSAN HILIR",
+        jurusan:"IPA",
+        kata:"Breakbeat lebih asik dari pada breakheart",
+        status:"naik"
+    },
+
+    "Anisa nia ramadhani":{
+        foto:"default.jpg",
+        ttl:"-",
+        asal:"-",
+        jurusan:"-",
+        kata:"-",
+        status:"naik"
+    },
+
+    "Aulia nur ramadhan":{
+        foto:"default.jpg",
+        ttl:"TANAH BUMBU, 29 Agustus 2009",
+        asal:"MTSs NU AL-FALAH",
+        jurusan:"IPA",
+        kata:"Terima kasih sudah jadi bagian dari cerita di kelas ini. Dari tugas yang bikin pusing, candaan receh, sampai momen diam-diam saling bantu, semuanya bakal jadi kenangan yang susah dilupain. Maaf kalau selama bersama aku pernah salah kata atau sikap. Semoga setelah ini jalan kita sama-sama dipenuhi hal baik, dan walau nanti sibuk dengan kehidupan masing-masing, semoga kita tetap saling ingat sebagai teman yang pernah tumbuh bersama.",
+        status:"naik"
+    },
+
+    "Bariq afondssji":{
+        foto:"default.jpg",
+        ttl:"TANAH BUMBU, ",
+        asal:"SMP MUHAMMDIYAH",
+        jurusan:"IPS",
+        kata:"jangn kasih kendor masa depan ngga butuh alasan butuh nya pembuktian",
+        status:"naik"
+    },
+
+    "Dina kamila":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 5 Mei 2008",
+        asal:"SMPN 6 KUSAN HILIR",
+        jurusan:"IPS",
+        kata:"Setahun bareng kalian ternyata ninggalin banyak cerita dan kenangan yang nggak sedikit. Makasih udah bikin hari-hari di kelas terasa lebih hidup, lebih rame, dan lebih berarti. Nanti yang paling ngangenin bukan cuma suasananya, tapi orang-orang di dalamnya. Kalian bakal selalu jadi bagian indah dari cerita ini.Dan sorry kalo banyak hal yang ngga kalian suka dari cara ku ngomong ke kalian,intinya makasih buat satu tahun nya",
+        status:"naik"
+    },
+
+    "Disti sahrah":{
+        foto:"default.jpg",
+        ttl:"TANAH BUMBU, 7 desember 2009",
+        asal:"MTsN 1 TANAH BUMBU",
+        jurusan:"RPL",
+        kata:"Banggalah pada dirimu sendiri karena tidak ada seorang pun yang tahu bagaimana rasanya menjadi dirimu setiap hari",
+        status:"naik"
+    },
+
+    "Erika nur jannah":{
+        foto:"default.jpg",
+        ttl:"TANAH BUMBU, 15 desember 2009",
+        asal:"SMPN 2 KUSAN HILIR",
+        jurusan:"IPS",
+        kata:"Kita dipertemukan di kelas yang sama, mungkin biar saling nguatin. Sekarang dipisah, mungkin biar kita belajar jalan sendiri. Makasih udah jadi bagian dari cerita SMA ku yang paling ga mau aku skip.  Beda kelas bukan berarti selesai.  Kita lanjut di bab selanjutnya, oke?",
+        status:"naik"
+    },
+
+    "Fahri":{
+        foto:"default.jpg",
+        ttl:"Mudalan, 20 januari 2010",
+        asal:"SMP Negeri 9",
+        jurusan:"IPS",
+        kata:"DUNIA AJA INI",
+        status:"naik"
+    },
+
+    "Lina":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 9 September 2008",
+        asal:"SMP Negeri 10",
+        jurusan:"IPS",
+        kata:"Terus berkembang.",
+        status:"naik"
+    },
+
+    "Maya":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 10 Oktober 2008",
+        asal:"SMP Negeri 11",
+        jurusan:"RPL",
+        kata:"Nikmati prosesnya.",
+        status:"naik"
+    },
+
+    "Nanda":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 11 November 2008",
+        asal:"SMP Negeri 12",
+        jurusan:"TKJ",
+        kata:"Berani mencoba hal baru.",
+        status:"naik"
+    },
+
+    "Maulana":{
+        foto:"default.jpg",
+        ttl:"TANAH BUMBU, 11 april 2010",
+        asal:"MTsN 1 TANAH BUMBU",
+        jurusan:"IPS",
+        kata:"prestasi tidak menentukanmu sukses, tetapi sukses di tentukan oleh caramu berprosess.",
+        status:"naik"
+    },
+
+    "Putri":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 13 Januari 2008",
+        asal:"SMP Negeri 14",
+        jurusan:"IPS",
+        kata:"Mimpi besar dimulai sekarang.",
+        status:"naik"
+    },
+
+    "Qori":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 14 Februari 2008",
+        asal:"SMP Negeri 15",
+        jurusan:"RPL",
+        kata:"Terus berusaha.",
+        status:"naik"
+    },
+
+    "Rizky":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 15 Maret 2008",
+        asal:"SMP Negeri 16",
+        jurusan:"TKJ",
+        kata:"Sukses butuh perjuangan.",
+        status:"naik"
+    },
+
+    "Salsa":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 16 April 2008",
+        asal:"SMP Negeri 17",
+        jurusan:"IPA",
+        kata:"Jangan takut gagal.",
+        status:"naik"
+    },
+
+    "Teguh":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 17 Mei 2008",
+        asal:"SMP Negeri 18",
+        jurusan:"IPS",
+        kata:"Belajar sungguh-sungguh.",
+        status:"naik"
+    },
+
+    "Udin":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 18 Juni 2008",
+        asal:"SMP Negeri 19",
+        jurusan:"RPL",
+        kata:"Semangat meraih cita-cita.",
+        status:"naik"
+    },
+
+    "Vina":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 19 Juli 2008",
+        asal:"SMP Negeri 20",
+        jurusan:"TKJ",
+        kata:"Percaya diri adalah kunci.",
+        status:"naik"
+    },
+
+    "Wahyu":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 20 Agustus 2008",
+        asal:"SMP Negeri 21",
+        jurusan:"IPA",
+        kata:"Tetap fokus tujuan.",
+        status:"naik"
+    },
+
+    "Xavier":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 21 September 2008",
+        asal:"SMP Negeri 22",
+        jurusan:"IPS",
+        kata:"Kerja keras membawa hasil.",
+        status:"naik"
+    },
+
+    "Yuni":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 22 Oktober 2008",
+        asal:"SMP Negeri 23",
+        jurusan:"RPL",
+        kata:"Tetap rendah hati.",
+        status:"naik"
+    },
+
+    "Zidan":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 23 November 2008",
+        asal:"SMP Negeri 24",
+        jurusan:"TKJ",
+        kata:"Jangan berhenti belajar.",
+        status:"naik"
+    },
+
+    "Aisyah":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 24 Desember 2008",
+        asal:"SMP Negeri 25",
+        jurusan:"IPA",
+        kata:"Jadilah versi terbaik.",
+        status:"naik"
+    },
+
+    "Bagas":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 25 Januari 2008",
+        asal:"SMP Negeri 26",
+        jurusan:"IPS",
+        kata:"Masa depan dimulai hari ini.",
+        status:"naik"
+    },
+
+    "Cahyo":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 26 Februari 2008",
+        asal:"SMP Negeri 27",
+        jurusan:"RPL",
+        kata:"Tetap konsisten.",
+        status:"naik"
+    },
+
+    "Dina":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 27 Maret 2008",
+        asal:"SMP Negeri 28",
+        jurusan:"TKJ",
+        kata:"Selalu bersyukur.",
+        status:"naik"
+    },
+
+    "Erwin":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 28 April 2008",
+        asal:"SMP Negeri 29",
+        jurusan:"IPA",
+        kata:"Berani melangkah maju.",
+        status:"naik"
+    },
+
+    "Fitri":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 29 Mei 2008",
+        asal:"SMP Negeri 30",
+        jurusan:"IPS",
+        kata:"Percaya proses kehidupan.",
+        status:"naik"
+    },
+
+    "Galih":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 30 Juni 2008",
+        asal:"SMP Negeri 31",
+        jurusan:"RPL",
+        kata:"Jangan cepat puas.",
+        status:"naik"
+    },
+
+    "Hasna":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 1 Juli 2008",
+        asal:"SMP Negeri 32",
+        jurusan:"TKJ",
+        kata:"Tetap tersenyum.",
+        status:"naik"
+    },
+
+    "Ilham":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 2 Agustus 2008",
+        asal:"SMP Negeri 33",
+        jurusan:"IPA",
+        kata:"Tetap semangat.",
+        status:"naik"
+    },
+
+    "Jihan":{
+        foto:"default.jpg",
+        ttl:"Kapuas, 3 September 2008",
+        asal:"SMP Negeri 34",
+        jurusan:"IPS",
+        kata:"Terus maju.",
+        status:"naik"
+    }
+
+};
+
+           function tutupPopup(){
+        document.getElementById("popupMusik").style.display = "none";
+    }
+
+        function lihatFoto(src){
+
+            document.getElementById("popupFoto").style.display = "flex";
+
+            document.getElementById("fotoBesar").src = src;
+
+        }
+
+        function tutupFoto(){
+
+            document.getElementById("popupFoto").style.display = "none";
+
+        }
+
+        const backsound = document.getElementById("backsound");
+
+       function izinkanMusik(){
+
+    document.getElementById("backsound").play();
+    
+    document.body.classList.add("start-animation");
+
+    let popup = document.getElementById("popupMusik");
+
+    popup.style.opacity = "0";
+
+    setTimeout(() => {
+
+        popup.style.display = "none";
+
+    }, 500);
+
+}
+
+        function page(no){
+
+            document.querySelectorAll(".page").forEach(p=>{
+                p.classList.remove("active");
+            });
+
+            document.getElementById("p"+no).classList.add("active");
+
+        }
+
+        function cek(){
+
+            let nama = document.getElementById("nama").value;
+
+            let hasil = document.getElementById("hasil");
+
+            let btn = document.getElementById("btnLanjut");
+
+            if(siswaData[nama]){
+
+                document.getElementById("foto").src =
+                siswaData[nama].foto;
+
+                document.getElementById("namaTampil").innerHTML =
+                nama;
+
+                document.getElementById("ttl").innerHTML =
+                siswaData[nama].ttl;
+
+                document.getElementById("asal").innerHTML =
+                siswaData[nama].asal;
+
+                document.getElementById("jurusan").innerHTML =
+                siswaData[nama].jurusan;
+
+                document.getElementById("kata").innerHTML =
+                siswaData[nama].kata;
+
+                hasil.innerHTML =
+                "Hai " + nama + "<p>Selamat menjalani sekolah di kelas yang baru, semangat belajar untuk gapai cita-cita mu cihuyyy";
+
+                hasil.className = "result success";
+
+                btn.style.display = "block";
+
+            } else {
+
+                hasil.innerHTML =
+                "Pilih nama terlebih dahulu";
+
+                btn.style.display = "none";
+
+            }
+
+        }
+
+        function game(){
+
+            let angka =
+            document.getElementById("tebak").value;
+
+            let random =
+            Math.floor(Math.random()*10)+1;
+
+            let hasil =
+            document.getElementById("gamehasil");
+
+            if(angka == random){
+
+                hasil.innerHTML =
+                "BENAR! Angkanya " + random;
+
+            } else {
+
+                hasil.innerHTML =
+                "Salah! Angkanya " + random;
+
+            }
+
+        }
+
+ const video1 = document.getElementById("videoKenangan1");
+const video2 = document.getElementById("videoKenangan2");
+
+[video1, video2].forEach(video => {
+  
+    video.volume = 0.35;
+
+    video.addEventListener("play", () => {
+
+        backsound.volume = 0.65;
+
+        video.volume = 0.25;
+
+    });
+
+    video.addEventListener("pause", () => {
+
+        backsound.volume = 1.0;
+
+    });
+
+    video.addEventListener("ended", () => {
+
+        backsound.volume = 1.0;
+
+    });
+
+});
+
+    </script>
+
+</body>
+
+</html>
